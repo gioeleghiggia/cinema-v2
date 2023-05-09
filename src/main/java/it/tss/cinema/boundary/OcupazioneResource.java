@@ -47,8 +47,8 @@ public class OcupazioneResource {
     @GET
     @Path("{programazzione_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Ocupazione find(@PathParam("programazzione_id") int  prog_id) {
-        return OcupazioneStore.findbyprog(prog_id).orElseThrow(() -> new NotFoundException());
+    public  Ocupazione find(@PathParam("programazzione_id") int  id) {
+        return OcupazioneStore.findbyprog(id).orElseThrow(() -> new NotFoundException());
     }   
     
     
