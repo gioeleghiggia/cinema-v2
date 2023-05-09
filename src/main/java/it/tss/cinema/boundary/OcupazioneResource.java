@@ -18,6 +18,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 @DenyAll
@@ -45,10 +46,11 @@ public class OcupazioneResource {
 
     @RolesAllowed({"ADMIN","USER"})
     @GET
-    @Path("{programazzione_id}")
+    @Path("programmazione")
+    @PathParam("{programazzione_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public  Ocupazione find(@PathParam("programazzione_id") int  id) {
-        return OcupazioneStore.findbyprog(id).orElseThrow(() -> new NotFoundException());
+    public  List<Ocupazione> find(@QueryParam("id") int  id) {
+        return store.findbyprog(id);
     }   
     
     
