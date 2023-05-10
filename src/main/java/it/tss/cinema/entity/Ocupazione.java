@@ -17,9 +17,9 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @NamedQueries({
-        @NamedQuery(name = Ocupazione.FIND_ALL, query = "select e from ocupazione e "),
+        @NamedQuery(name = Ocupazione.FIND_ALL, query = "select e from Ocupazione e "),
            @NamedQuery(name = Ocupazione.FIND_BY_PROG,
-            query = "select e from Ocupazione e where e.programazione.id= :prog_id"),
+            query = "select e from Ocupazione e where e.programmazione_id= :programmazione_id"),
 })
 
 @Entity

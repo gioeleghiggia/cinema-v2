@@ -46,7 +46,7 @@ public class OcupazioneResource {
 
     @RolesAllowed({"ADMIN","USER"})
     @GET
-    @Path("programmazione")
+    @Path("list-by-programmazione")
     @PathParam("{programazzione_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public  List<Ocupazione> find(@QueryParam("id") int  id) {

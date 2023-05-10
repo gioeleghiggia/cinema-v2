@@ -4,12 +4,7 @@
  */
 package it.tss.cinema.control;
 
-import java.util.Optional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.NonUniqueResultException;
-import javax.persistence.PersistenceContext;
 
 import it.tss.cinema.Control;
 import it.tss.cinema.entity.Ocupazione;

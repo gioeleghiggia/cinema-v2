@@ -33,6 +33,12 @@ public class Programmazione extends AbstractEntity {
     public static final String FIND_BY_DATA = "Programmazione.findByData";
     public static final String FIND_BY_FILM = "Programmazione.findByFilm";
     public static final String FIND_BY_FILM_AND_DATA = "Programmazione.findByFilmAndData";
+    
+    
+    @NotNull
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "sala_id")
+    Sala sala;
 
     @NotNull
     @ManyToOne(optional = false)
@@ -50,14 +56,28 @@ public class Programmazione extends AbstractEntity {
 
     public Programmazione() {
     }
-
-    public Programmazione(Film film, LocalDate il, BigDecimal prezzo) {
+    
+      public Programmazione(Film film, LocalDate il, BigDecimal prezzo) {
         this.film = film;
         this.il = il;
         this.prezzo = prezzo;
+    }  
+
+    public Programmazione(Film film, LocalDate il, BigDecimal prezzo, Sala sala) {
+        this.film = film;
+        this.il = il;
+        this.prezzo = prezzo;
+        this.sala = sala;
     }
 
-    
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
+    }
+
     public Film getFilm() {
         return film;
     }
@@ -81,5 +101,7 @@ public class Programmazione extends AbstractEntity {
     public void setPrezzo(BigDecimal prezzo) {
         this.prezzo = prezzo;
     }
+
+    
 
 }
