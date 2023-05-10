@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Min;
@@ -36,7 +37,7 @@ public class Ocupazione extends AbstractEntity {
         Programmazione programmazione_id;   
             
         @NotNull
-        @ManyToOne(optional = false)
+        @ManyToOne(optional = true)
         @JoinColumn(name = "utente_id")
         Utente utente_id;   
         
@@ -47,17 +48,23 @@ public class Ocupazione extends AbstractEntity {
         @NotNull
         @Min(1)
         int pos_y;
-                                
-        String tipo_bigleto;
+                        
+        String nome_cliente;     
+        
+        @OneToOne
+        @NotNull
+        Biglietto tipo_bigleto;
+        
         String numero_bibleto;
 
-    public Ocupazione(Programmazione programmazione_id, Utente utente_id, int pos_x, int pos_y, String tipo_bigleto, String numero_bibleto) {
+    public Ocupazione(Programmazione programmazione_id, Utente utente_id, int pos_x, int pos_y, Biglietto tipo_bigleto, String numero_bibleto, String nome_cliente) {
         this.programmazione_id = programmazione_id;
         this.utente_id = utente_id;
         this.pos_x = pos_x;
         this.pos_y = pos_y;
         this.tipo_bigleto = tipo_bigleto;
         this.numero_bibleto = numero_bibleto;
+        this.nome_cliente = nome_cliente;
     }
 
     public Programmazione getProgrammazione_id() {
@@ -92,11 +99,11 @@ public class Ocupazione extends AbstractEntity {
         this.pos_y = pos_y;
     }
 
-    public String getTipo_bigleto() {
+    public Biglietto getTipo_bigleto() {
         return tipo_bigleto;
     }
 
-    public void setTipo_bigleto(String tipo_bigleto) {
+    public void setTipo_bigleto(Biglietto tipo_bigleto) {
         this.tipo_bigleto = tipo_bigleto;
     }
 
@@ -108,7 +115,11 @@ public class Ocupazione extends AbstractEntity {
         this.numero_bibleto = numero_bibleto;
     }
 
-   
+    public String getNome_cliente() {
+        return nome_cliente;
+    }
+
+    
         
 
     
