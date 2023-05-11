@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-
+/*
 @NamedQueries({
         @NamedQuery(name = Ocupazione.FIND_ALL, query = "select e from Ocupazione e "),
            @NamedQuery(name = Ocupazione.FIND_BY_PROG,
@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ocupazione")
-
+*/
 public class Ocupazione extends AbstractEntity {
     
     public static final String FIND_ALL = "Ocupazione.findAll";
@@ -39,7 +39,7 @@ public class Ocupazione extends AbstractEntity {
         @NotNull
         @ManyToOne(optional = true)
         @JoinColumn(name = "utente_id")
-        Utente utente_id;   
+        Utente utente_id; 
         
         @NotNull
         @Min(1)
@@ -51,9 +51,13 @@ public class Ocupazione extends AbstractEntity {
                         
         String nome_cliente;     
         
+        
         @OneToOne
         @NotNull
         Biglietto tipo_bigleto;
+        
+ 
+        
         
         String numero_bibleto;
 

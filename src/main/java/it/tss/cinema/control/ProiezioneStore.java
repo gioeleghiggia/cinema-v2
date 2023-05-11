@@ -18,8 +18,9 @@ import javax.ws.rs.NotFoundException;
  *
  * @author ospite
  */
-@Control
-public class ProiezioneStore extends AbstractStore<Proiezione> {
+//@Control
+/*
+public class ProiezioneStore {
 
     @Inject
     BigliettoStore bigliettoStore;
@@ -67,4 +68,4 @@ public class ProiezioneStore extends AbstractStore<Proiezione> {
         return save(found);
     }
 
-}
+}*/

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-
+/*
 @NamedQueries({
     @NamedQuery(name = Proiezione.FIND_BY_PROGRAMMAZIONE, 
             query = "select e from Proiezione e where e.programmazione.id= :id"),
@@ -24,7 +24,8 @@ import javax.validation.constraints.NotNull;
 @Table(name = "proiezione",
         uniqueConstraints = {
             @UniqueConstraint(columnNames = {"programmazione_id", "sala_id"})})
-public class Proiezione extends AbstractEntity {
+*/
+public class Proiezione {
 
     public static final String FIND_BY_PROGRAMMAZIONE = "Proiezione.findByProgrammazione";
     public static final String FIND_BY_FILM = "Proiezione.findByFilm";

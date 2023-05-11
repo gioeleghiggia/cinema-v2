@@ -9,6 +9,7 @@ it\tss\cinema\boundary\ProgDTO.class
 it\tss\cinema\boundary\BigliettiResource.class
 it\tss\cinema\boundary\OcupazioneResource.class
 it\tss\cinema\control\BigliettoStore.class
+.netbeans_automatic_build
 it\tss\cinema\boundary\ProiezioniResource.class
 it\tss\cinema\entity\Sala.class
 it\tss\cinema\boundary\UtentiResource.class
@@ -28,7 +29,6 @@ it\tss\cinema\control\OcupazioneStore.class
 it\tss\cinema\LoggerProducer.class
 it\tss\cinema\control\AbstractStore.class
 it\tss\cinema\entity\Utente.class
-it\tss\cinema\control\ProiezioneStore.class
 it\tss\cinema\entity\Biglietto$Tipo.class
 it\tss\cinema\entity\Ocupazione.class
 it\tss\cinema\control\SalaStore.class

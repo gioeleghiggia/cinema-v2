@@ -7,10 +7,8 @@
     <class>it.tss.cinema.entity.Biglietto</class>
     <class>it.tss.cinema.entity.Film</class>
     <class>it.tss.cinema.entity.Programmazione</class>
-    <class>it.tss.cinema.entity.Proiezione</class>
     <class>it.tss.cinema.entity.Sala</class>
     <class>it.tss.cinema.entity.Utente</class>
-    <class>it.tss.cinema.entity.Ocupazione</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="none"/>

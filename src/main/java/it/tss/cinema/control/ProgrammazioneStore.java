@@ -17,20 +17,18 @@ import javax.persistence.NoResultException;
 @Control
 public class ProgrammazioneStore extends AbstractStore<Programmazione> {
 
-    @Inject
-    ProiezioneStore proiezioneStore;
 
     public ProgrammazioneStore() {
         super(Programmazione.class);
     }
-
+/*
     @Override
     public void remove(Long id) {
         proiezioneStore.byProgrammazione(id)
                 .forEach(v -> proiezioneStore.remove(v.getId()));
         super.remove(id);
     }
-
+*/
     public List<Programmazione> all() {
         return em.createNamedQuery(Programmazione.FIND_ALL, Programmazione.class)
                 .getResultList();

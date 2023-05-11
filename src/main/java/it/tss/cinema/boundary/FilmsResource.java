@@ -6,7 +6,7 @@ package it.tss.cinema.boundary;
 import it.tss.cinema.Boundary;
 import it.tss.cinema.control.FilmStore;
 import it.tss.cinema.control.ProgrammazioneStore;
-import it.tss.cinema.control.ProiezioneStore;
+//import it.tss.cinema.control.ProiezioneStore;
 import it.tss.cinema.control.SalaStore;
 import it.tss.cinema.entity.Film;
 import it.tss.cinema.entity.Programmazione;
@@ -43,8 +43,8 @@ public class FilmsResource {
     @Inject
     SalaStore salaStore;
 
-    @Inject
-    ProiezioneStore proiezioneStore;
+    //@Inject
+    //ProiezioneStore proiezioneStore;
 
     @Inject
     ProgrammazioneStore programmazioneStore;
@@ -98,6 +98,7 @@ public class FilmsResource {
         return programmazioneStore.byFilm(found.getId());
     }
 
+    /*
     @RolesAllowed({"ADMIN"})
     @POST
     @Path("{id}/programmazioni")
@@ -125,4 +126,5 @@ public class FilmsResource {
         Film found = store.findById(id).orElseThrow(() -> new NotFoundException());
         return proiezioneStore.byFilm(found.getId());
     }
+*/
 }

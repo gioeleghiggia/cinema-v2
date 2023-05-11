@@ -24,5 +24,11 @@ public class FilmStore extends AbstractStore<Film> {
         return  em.createNamedQuery(Film.FIND_ALL, Film.class)
                 .getResultList();
     }
+    
+    public int findById(){ 
+        
+       
+    
+    }
 
 }

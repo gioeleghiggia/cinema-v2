@@ -6,7 +6,7 @@ package it.tss.cinema.boundary;
 
 import it.tss.cinema.Boundary;
 import it.tss.cinema.control.BigliettoStore;
-import it.tss.cinema.control.ProiezioneStore;
+//import it.tss.cinema.control.ProiezioneStore;
 import it.tss.cinema.control.SalaStore;
 import it.tss.cinema.control.UtenteStore;
 import it.tss.cinema.entity.Biglietto;
@@ -41,15 +41,15 @@ public class ProiezioniResource {
     @Inject
     JsonWebToken jwt;
 
-    @Inject
-    ProiezioneStore store;
+    //@Inject
+    //ProiezioneStore store;
 
     @Inject
     BigliettoStore bigliettoStore;
 
     @Inject
     UtenteStore utenteStore;
-
+/*
     @RolesAllowed({"ADMIN", "USER"})
     @GET
     @Path("{id}")
@@ -57,7 +57,7 @@ public class ProiezioniResource {
     public Proiezione find(@PathParam("id") Long id) {
         return store.findById(id).orElseThrow(() -> new NotFoundException());
     }
-
+*/
     @RolesAllowed({"ADMIN", "USER"})
     @GET
     @Path("{id}/biglietti")
@@ -68,7 +68,7 @@ public class ProiezioniResource {
 
         return bigliettoStore.byProiezioneUtente(id, logged.getId());
     }
-
+/*
     @RolesAllowed({"ADMIN", "USER"})
     @POST
     @Path("{id}/biglietti")
@@ -81,5 +81,5 @@ public class ProiezioniResource {
         e.setUtente(logged);
         return bigliettoStore.save(e);
     }
-
+*/
 }
