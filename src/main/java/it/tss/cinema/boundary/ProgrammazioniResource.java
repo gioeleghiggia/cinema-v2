@@ -74,17 +74,19 @@ public class ProgrammazioniResource {
 */
     @RolesAllowed({"ADMIN"})
     @POST
-    //@Path("{id}/programmazione")
     @Produces(MediaType.APPLICATION_JSON)
     public Programmazione creaProgrammazione(ProgDTO e) {
-        Sala foundSala = salaStore.findById(e.getSala().getId()).orElseThrow(() -> new NotFoundException());
-        Film f = filmStore.findById(e.getFilm().getId()).orElseThrow(() -> new NotFoundException());
-                
-        if (e == null || e.getSala() == null || e.getSala().getId() == null) {
-            throw new BadRequestException();
-        }
         
-        Programmazione p = new  Programmazione(film, LocalDate.MIN, BigDecimal.ZERO, foundSala);
+        Sala foundSala = salaStore.findById(e.id).orElseThrow(() -> new NotFoundException());
+        
+        Film f = filmStore.findById(e.id).orElseThrow(() -> new NotFoundException());
+                
+      /*  if (e == null || e.getSala() == null || e.getSala().getId() == null) {
+            throw new BadRequestException();
+        }*/
+ 
+        
+        Programmazione p = new  Programmazione(f, LocalDate.MIN, BigDecimal.ZERO, foundSala);
         
         return store.save(p);
     }

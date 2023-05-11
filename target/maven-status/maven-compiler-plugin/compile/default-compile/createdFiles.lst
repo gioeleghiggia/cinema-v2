@@ -9,7 +9,6 @@ it\tss\cinema\boundary\ProgDTO.class
 it\tss\cinema\boundary\BigliettiResource.class
 it\tss\cinema\boundary\OcupazioneResource.class
 it\tss\cinema\control\BigliettoStore.class
-.netbeans_automatic_build
 it\tss\cinema\boundary\ProiezioniResource.class
 it\tss\cinema\entity\Sala.class
 it\tss\cinema\boundary\UtentiResource.class
