@@ -5,6 +5,7 @@
 package it.tss.cinema;
 
 import java.io.IOException;
+import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
@@ -32,6 +33,6 @@ public class OptionRequestFilter implements ContainerRequestFilter {
         if (requestContext.getMethod().contentEquals("OPTIONS")) {
             logger.log(System.Logger.Level.INFO, "OPTIONS request...");
             requestContext.abortWith(Response.status(Response.Status.NO_CONTENT).build());
-        }
+        }    
     }
 }
