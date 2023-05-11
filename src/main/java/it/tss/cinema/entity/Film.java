@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 
 @NamedQueries({
         @NamedQuery(name = Film.FIND_ALL, query = "select e from Film e order by e.titolo"),
+    @NamedQuery(name = Film.FIND_BY_ID, query = "select e from Film e where e.id=:id"),
 })
 
 @Entity
@@ -18,6 +19,7 @@ import javax.validation.constraints.NotBlank;
 public class Film extends AbstractEntity {
 
     public static final String FIND_ALL = "Film.findAll";
+    public static final String FIND_BY_ID = "Film.findById"; 
 
     @NotBlank
     @Column(nullable = false)

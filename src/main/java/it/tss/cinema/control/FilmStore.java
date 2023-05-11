@@ -25,10 +25,9 @@ public class FilmStore extends AbstractStore<Film> {
                 .getResultList();
     }
     
-    public int findById(){ 
-        
-       
-    
+    public List<Film> findById() {
+        return em.createNamedQuery(Film.FIND_BY_ID, Film.class)
+                .getResultList();
     }
 
 }
